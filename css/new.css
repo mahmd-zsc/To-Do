@@ -1,0 +1,276 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+:root {
+  --background: #f8ede3;
+  --padding: 20px 15px;
+  --radius: 6px;
+  --transition: 0.3s;
+  --mode: white;
+  --second-mode: #d9d9d9;
+}
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+img {
+  width: 20px;
+  height: 20px;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* start component */
+.menu {
+  position: absolute;
+  /* display: none; */
+  z-index: 5;
+  width: 20px;
+  left: 20px;
+  top: 50px;
+  cursor: pointer;
+}
+.mode{
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+    position: absolute;
+    bottom: 20px;
+    cursor: pointer;
+}
+.active{
+    display: block;
+}
+/* end component */
+ {
+}
+/* start animation */
+@keyframes asideHight {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@keyframes listDown {
+  0% {
+    bottom: 75px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+/* end animation */
+ {
+}
+/* start container */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* end container */
+ {
+}
+
+ {
+}
+/* start main */
+
+/* end main */
+/* start aside */
+aside {
+  height: 100%;
+  width: 300px;
+  overflow: hidden;
+  background-color: var(--mode);
+  box-shadow: -3px 0px 6px 0px black;
+  z-index: 2;
+  /* display: none; */
+  transition: var(--transition);
+}
+aside ul {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  /* gap: 5px; */
+}
+aside li {
+  padding: var(--padding);
+  display: flex;
+  gap: 10px;
+  /* background-color: red; */
+  align-items: center;
+  position: relative;
+  transition: var(--transition);
+  cursor: pointer;
+}
+aside li:hover:not(.active) {
+  background-color: #cfb4a211;
+}
+aside li::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  background-color: #d0b8a8;
+  left: 0;
+  transition: var(--transition);
+  animation: asideHight 1s;
+  display: none;
+  bottom: 0;
+}
+ul .active::before {
+  display: block;
+}
+ul .active {
+  background-color: #b45e2418;
+  z-index: 4;
+}
+aside li img {
+  width: 20px;
+  height: 20px;
+}
+aside li span {
+  text-transform: capitalize;
+}
+aside li .num {
+  position: absolute;
+  right: 20px;
+}
+/* end aside */
+ {
+}
+/* start atrial */
+article {
+  flex: 1;
+  background-color: var(--background);
+  /* overflow-y: scroll; */
+}
+article .boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  display: none;
+}
+article .title {
+  margin-top: 44px;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  gap: 10px;
+  position: relative;
+  text-transform: capitalize;
+}
+article .title h1 {
+  margin: 0;
+}
+
+article .title .date {
+  position: absolute;
+  bottom: -20px;
+  font-size: 14px;
+  color: gray;
+}
+
+article form {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  position: relative;
+}
+article form img {
+  position: absolute;
+  left: 45px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+article form input[type="text"] {
+  width: 95%;
+  border: none;
+  background-color: var(--mode);
+  padding: 20px 10px;
+  padding-left: 50px;
+  color: black;
+  border-radius: var(--radius);
+  caret-color: var(--background);
+  font-size: 16px;
+}
+article form input[type="text"]:focus {
+  outline: none;
+}
+article form input[type="text"]:focus::placeholder {
+  transition: var(--transition);
+  opacity: 0.5;
+}
+article form input[type="text"]::placeholder {
+  font-size: 16px;
+  font-weight: 500;
+}
+article .lists {
+  /* flex-grow-1 d-flex flex-column gap-2 overflow-x-scroll */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 10px;
+  align-items: center;
+  /* overflow:scroll; */
+  position: relative;
+  z-index: 7;
+}
+article .lists .list {
+  width: 95%;
+  height: 50px;
+  border-radius: var(--radius);
+  background-color: var(--mode);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  animation: listDown var(--transition);
+  position: relative;
+  z-index: -3;
+}
+article .list .chickText {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+article .list .ball {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--second-mode);
+  position: relative;
+}
+article .list .ball img {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+article .list .ball:hover img {
+  display: block;
+}
+article .list span {
+  padding-left: 10px;
+}
+article .images img {
+  width: 15px;
+  height: 15px;
+}
+
+/* end atrial */

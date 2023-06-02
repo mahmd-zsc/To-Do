@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- small icon -->
+    <link
+      rel="shortcut icon"
+      type="x-icon"
+      href="./images/icon/checked-1.png"
+    />
+    <!-- main css fill -->
+
+    <link rel="stylesheet" href="css/en.css" />
+
+    <!-- css bootstrap fill -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- font-awesome fill -->
+
+    <!-- animate.css -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    /> -->
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Taskify</title>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="container overflow-hidden h-100">
+        <div class="min_container d-flex h-100 rounded-1 overflow-hidden">
+          <aside class="overflow-y-scroll">
+            <!-- <img class="menu" src="images/icon/menu.png" alt=""> -->
+            <ul class="p-0">
+              <li id="today" data-title="today">
+                <img
+                  class="pe-lg-2 p-sm-0 pe-md-1"
+                  src="images/icon/today.png"
+                  alt="icon"
+                /><span>today</span>
+                <span class="num"></span>
+              </li>
+              <li id="important" data-title="important">
+                <img
+                  class="pe-lg-2 p-sm-0 pe-md-1"
+                  src="images/icon/star.png"
+                  alt="icon"
+                />
+                <span>important</span>
+                <span class="num"></span>
+              </li>
+              <li id="completed" data-title="completed">
+                <img
+                  class="pe-lg-2 p-sm-0 pe-md-1"
+                  src="images/icon/completed.png"
+                  alt="icon"
+                />
+                <span class="num"></span>
+                <span>completed</span>
+              </li>
+              <li id="plan" data-title="plan">
+                <img
+                  class="pe-lg-2 p-sm-0 pe-md-1"
+                  src="images/icon/plan.png"
+                  alt="icon"
+                /><span>plan</span>
+                <span class="num"></span>
+              </li>
+              <!-- <li id="all">
+                <img
+                  class="pe-lg-2 p-sm-0 pe-md-1"
+                  src="images/all-inclusive.png"
+                  alt="icon"
+                /><span>All</span>
+                <span class="num"></span>
+              </li> -->
+              <li id="setting" data-title="setting">
+                <img
+                  class="pe-lg-2 p-sm-0 pe-md-1"
+                  src="images/icon/settings.png"
+                  alt="icon"
+                /><span>setting</span>
+              </li>
+            </ul>
+            <!-- <button>
+              <span class="">new list</span>
+              <img src="images/plus.png" alt="" />
+            </button> -->
+          </aside>
+          <div class="boxes today flex-grow-1 flex-column gap-3">
+            <form class="d-flex gap-2 position-relative" action="#">
+              <img
+                class="position-absolute"
+                src="images/icon/plus.png"
+                alt=""
+              />
+              <input
+                class="flex-grow-1 p-4 ps-5"
+                type="text"
+                placeholder="Add a Task"
+              />
+            </form>
+            <div
+              class="lists flex-grow-1 d-flex flex-column gap-2 overflow-x-scroll"
+            ></div>
+          </div>
+
+          <div class="boxes important flex-grow-1 flex-column gap-3">
+            <form class="d-flex gap-2 position-relative" action="#">
+              <img
+                class="position-absolute"
+                src="images/icon/plus.png"
+                alt=""
+              />
+              <input
+                class="flex-grow-1 p-4 ps-5"
+                type="text"
+                placeholder="Add a important task"
+              />
+            </form>
+            <div
+              class="lists flex-grow-1 d-flex flex-column gap-2 overflow-x-scroll"
+            ></div>
+          </div>
+          <div class="boxes completed flex-grow-1 flex-column gap-3">
+            <div
+              class="lists flex-grow-1 d-flex flex-column gap-2 overflow-x-scroll"
+            ></div>
+          </div>
+          <div class="boxes plan flex-grow-1 flex-column gap-3">
+            <form class="d-flex gap-2 position-relative" action="#">
+              <img src="images/icon/plus.png" alt="" />
+              <input
+                class="flex-grow-1 p-4 ps-5"
+                type="text"
+                placeholder="Add a Task"
+              />
+              <input type="date" name="" id="" />
+            </form>
+            <div
+              class="lists flex-grow-1 d-flex flex-column gap-2 overflow-x-scroll"
+            >
+              <!-- <div
+                class="list d-flex justify-content-between align-items-center .topToDown"
+              >
+                <div class="chickText">
+                  <div class="liftSide">
+                    <input class="checked" type="checkbox" name="" id="" />
+                    <span>no</span>
+                  </div>
+                  <span class="date">200</span>
+                </div>
+                <div class="images d-flex gap-2">
+                  <img class="star" src="images/star-false.png" /><img
+                    class="delete"
+                    src="images/trash.png"
+                  />
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <!-- <div class="boxes all flex-grow-1 flex-column gap-3">
+            <form class="d-flex gap-2 position-relative" action="#">
+              <img class="position-absolute" src="images/plus.png" alt="" />
+              <input
+                class="flex-grow-1 p-4 ps-5"
+                type="text"
+                placeholder="Add a Task"
+              />
+            </form>
+            <div
+              class="lists flex-grow-1 d-flex flex-column gap-2 overflow-x-scroll"
+            ></div>
+          </div> -->
+          <div class="boxes setting flex-grow-1 flex-column gap-3">
+            <div
+              class="lists flex-grow-1 d-flex flex-column gap-2 overflow-x-scroll"
+            >
+              <div class="box background">
+                <h3>background</h3>
+                <ul>
+                  <li>
+                    <img
+                      src="images/background/1.png"
+                      data-img="images/background/1+.jpg"
+                      alt=""
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="images/background/2.png"
+                      data-img="images/background/2+.png"
+                      alt=""
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="images/background/3.png"
+                      data-img="images/background/3+.png"
+                      alt=""
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="images/background/4.png"
+                      data-img="images/background/4+.png"
+                      alt=""
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="images/background/5.png"
+                      data-img="images/background/5+.png"
+                      alt=""
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="images/background/6.png"
+                      data-img="images/background/6+.png"
+                      alt=""
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="images/background/7.png"
+                      data-img="images/background/7+.png"
+                      alt=""
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="images/background/8.png"
+                      data-img="images/background/8+.jpg"
+                      alt=""
+                    />
+                  </li>
+                </ul>
+              </div>
+              <div class="box lang-mode">
+                <div class="lang">
+                  <h3>language</h3>
+                  <a href="ar.html"
+                    ><img src="images/lang/united-arab-emirates.png" alt="ar"
+                  /></a>
+                </div>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <audio class="ball" src="Audio/mixkit-game-ball-tap-2073.wav"></audio>
+    </div>
+
+    <!--  js filles -->
+    <script src="js/app.js"></script>
+
+    <!--js bootstrap fill  -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- font-awesome fill -->
+    <!-- <script src="js/test.js"></script> -->
+
+    <script
+      src="https://kit.fontawesome.com/59cb92eb0c.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
